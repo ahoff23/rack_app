@@ -1,0 +1,57 @@
+@import "bootstrap";
+
+/* universal */
+html {
+	overflow-y: scroll;
+}
+
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	padding-right: 100px;
+	border-top: 1px solid #eaeaea;
+	color: #eaeaea;
+	a {
+		color: #555;
+		&:hover {
+			color: #000000;
+			text-decoration: none;
+		}
+	}	
+	ul {
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 15px;
+		}
+	}
+}
+
+
+/* header */
+
+.navbar-fixed-top {
+	.container {
+    	width: 95%;
+    }
+}
+
+/* main body */
+
+body {
+	padding-top: 40px;
+
+	.center {
+		text-align: center;
+	}
+
+	.btn {
+		margin-top: 2px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
