@@ -8,9 +8,12 @@
 	  <%= render 'layouts/shim' %>
 	</head>
 	<body>
-
 		<%= render 'layouts/header' %>
 		<div class="below_header">
+			<!--Contents of any alert flashes-->
+			<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+			<% end %>
 			<%= yield %>
 			<%= render 'layouts/footer' %>
 		</div>
