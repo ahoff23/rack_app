@@ -1,0 +1,15 @@
+<% provide(:title, "Edit Account") %>
+<div class="hero-unit">
+	<h1 class="center">Update Account Information</h1>
+	<div class="row">
+		<div class="span5 offset640">
+			<%= form_for(@user) do |f| %>
+				<!--Print error messages-->
+				<%= render 'forms/error_messages' %>
+				<!--Print user information forms-->
+				<%= render 'forms/user_info', f: f %>
+				<%= f.submit "Update Account", class: "btn btn-large btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div>

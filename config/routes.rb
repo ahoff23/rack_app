@@ -1,6 +1,7 @@
 RackApp::Application.routes.draw do
-  #Add user resource to application
+  #Add controllers to application
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   #Set a root page
   root 'static_pages#home'
@@ -13,4 +14,8 @@ RackApp::Application.routes.draw do
 
   #Redefine routes for user pages
   match '/signup',	to: 'users#new',               via: 'get'
+
+  #Redefine routes for sign-in/out pages
+  match '/signin',  to: 'sessions#new',             via: 'get'
+  match '/signout', to: 'sessions#destroy',         via: 'delete'
 end

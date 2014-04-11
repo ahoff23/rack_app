@@ -13,7 +13,30 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:admin) }
+  it { should_not be_admin }
+
+  #*****************************
+  #Admin Tests
+  #*****************************
+  describe "admin attribute" do
+    before do
+      @user.save!
+      @user.toggle!(:admin)
+    end
+    it { should be_admin }
+  end
+
+  #*****************************
+  #Remember Toekn Tests
+  #*****************************
+  describe "remember token" do
+    before { @user.save }
+    #Make sure each user has a remember_token
+    its(:remember_token) { should_not be_blank }
+  end
 
   #*****************************
   #Validation Tests
